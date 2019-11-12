@@ -21,5 +21,7 @@
     "dan_perm" : [
         "", ""
     ],
+    "member_cooldown": 180,
+    "report_channel": "reports",
     "management_channel": "server-management"
 }
