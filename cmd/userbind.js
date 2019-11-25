@@ -2,8 +2,8 @@ const mongodb = require('mongodb');
 const http = require('http');
 
 module.exports.run = (client, message, args, maindb) => {
-	let uid = args[0];
-	if (isNaN(parseInt(uid))) {message.channel.send("Your uid please!")}
+	if (!args[0]) {message.channel.send("Your uid please!"); return;}
+	if (!Number.isInteger(args[0])) {message.channel.send("Invalid uid")}
 	else {
 		let name="";
 		var options = {
