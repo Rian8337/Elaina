@@ -36,8 +36,8 @@ module.exports.run = (client, message, args, maindb) => {
 			const embed = new Discord.RichEmbed()
 				.setDescription('**PP Profile for <@' + discordid + '> (' + username + ') [Page ' + page + ']**\nTotal PP: **' + pp + " pp**\n" + site + " - " + mirror)
 				.setColor(message.member.highestRole.hexColor)
-				.setFooter("Elaina owo", "https://image.frl/p/yaa1nf94dho5f962.jpg");
-			
+				.setFooter("Alice Synthesis Thirty", "https://i.imgur.com/S5yspQs.jpg");
+
 			for (var x = 5 * (page - 1); x < 5 + 5 * (page - 1); x++) {
 				if (ppentry[x]) {
 					let combo = ppentry[x][3].toString();
