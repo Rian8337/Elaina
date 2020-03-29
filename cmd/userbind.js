@@ -1,10 +1,13 @@
+const Discord = require('discord.js');
 const http = require('http');
 const droidapikey = process.env.DROID_API_KEY;
 
 module.exports.run = (client, message, args, maindb) => {
+	if (message.channel instanceof Discord.DMChannel) return;
+	if (!message.member.roles.find(r => r.name === "Member")) return message.channel.send("You must be verified before binding your account!");
 	let uid = args[0];
 	if (!uid) return message.channel.send("Your uid please!");
-	if (isNaN(uid)) {message.channel.send("Invalid uid")}
+	if (isNaN(uid)) message.channel.send("Invalid uid");
 	else {
 		let binddb = maindb.collection("userbind");
 		let query = {discordid: message.author.id};
